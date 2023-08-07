@@ -1,0 +1,8 @@
+select 
+	class_id,count(class_id) 
+from 
+	student 
+group by 
+	class_id 
+having 
+	count(class_id) > 1
