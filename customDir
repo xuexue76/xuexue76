@@ -1,0 +1,12 @@
+function y = myfunc
+%#codegen
+y = 21;
+coder.cinclude('myMult2.h');
+y = coder.ceval('myMult2', y);
+% Specify the locations of myMult2.h and myMult2.c
+coder.extrinsic('pwd', 'fullfile');
+customDir = coder.const(fullfile(pwd, 'mycfiles'));
+coder.updateBuildInfo('addIncludePaths', customDir);
+coder.updateBuildInfo('addSourcePaths', customDir);
+coder.updateBuildInfo('addSourceFiles', 'myMult2.c');
+end
