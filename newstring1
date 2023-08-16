@@ -1,0 +1,13 @@
+proc temp { arg } { upvar $arg b set b [expr $b+2] } 
+proc myexp { var } { set a 4 temp a return [expr $var+$a] }
+则: myexp 7 13
+string length string
+string range string first last
+string index string charIndex
+string tolower string [first] [last]
+string replace string first last [newstring]
+string equal [-nocase] [-length int] string1 string2
+string match [-nocase] pattern string 
+string compare [-nocase] [-length int] string1 string2  
+string first string1 string2 [startindex]  
+string trim string [chars] 
