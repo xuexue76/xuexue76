@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a = 10;
+	int* pa = &a;
+	int& ra = a;
+
+	++(*pa);
+	++ra;
+	return 0;
+}
+
+inline void Fun(int& a, int& b)
+{
+	int tmp = a;
+	a = b;
+	b = tmp;
+}
+
+int main()
+{
+	int a = 10, b = 20;
+	Fun(a, b);
+	return 0;
+}
